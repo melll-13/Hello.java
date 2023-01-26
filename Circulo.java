@@ -1,6 +1,6 @@
 public class Circulo {
 
-	int radio;
+    int radio;
 	
 	public Circulo(int radio) {
     this.radio = radio;
