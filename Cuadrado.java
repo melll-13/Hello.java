@@ -1,8 +1,8 @@
 public class Cuadrado {
  
- int lado;
+  int lado;
 	
-	public Cuadrado(int lado) {
+  public Cuadrado(int lado) {
     this.lado = lado;
   }
 
@@ -21,4 +21,3 @@ public class Cuadrado {
   }
 
 }
-
