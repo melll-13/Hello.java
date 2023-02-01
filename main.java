@@ -47,7 +47,7 @@ public class hello {
         Cuadrado square = new Cuadrado (lado);
         System.out.println ("The Diagonal of the square is " + square.calcularDiagonal());
         break;
-       case 4: 
+       case 5: 
         System.out.print ("Enter the side length of the square: ");
         double lado = Double.parseDouble (entradas.nextLine());
         Cuadrado square = new Cuadrado (lado);
