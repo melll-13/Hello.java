@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class actividad8 {
+
+	public static void main (String[] Args ) {
+		
+		//Arreglo 15 enteros
+			int arreglo [] =  new int [15];
+
+			//llenar el arreglo con valores aleatorios entre 1 y100
+	    	for (int i=0;i<=arreglo.length-1;i++){
+	    		int aleatorio = 1 + (int) (Math.random()*99);
+	    		arreglo[i]=aleatorio;
+	    	}
+	    	arreglo[9]=5;
+	    	
+	    
+	    //Arreglo 20 nombres
+	    	String [] nombres = new String [20];
+	    	
+	    	nombres [0] = "Fransisco";
+	    
+	    //Arreglo 100 objetos
+	    	Object [] circulo = new Object [100];
+
+	try (Scanner entrada = new Scanner (System.in)) {
+			
+	System.out.println("¿Que operación quieres realizar? Ingresa el numero que correspoda a la lista de operaciónes"); 
+	System.out.println("\n1 - Mostrar contenido de Arreglo");	
+	System.out.println("2 - Buscar Valor en Arreglo");
+	System.out.println("2 - Eliminar Valor en Arreglo");
+	
+	int operacion = entrada.nextInt();
+	
+	if(operacion == 1){
+   	 mostrarContenidoDeArreglo();
+}
+    if(operacion == 2){
+   	 System.out.println(buscarValorEnArreglo());
+}   
+    if(operacion == 3){
+   	 System.out.println(eliminarValorEnArreglo());
+}
+    
+    
+	
+    }
+	
+
+
+
+	public static void mostrarContenidoDeArreglo() {
+		for (int i=0; i<=arreglo.length-1;i++){
+	      System.out.print (arreglo[i] + " ");
+	    }
+		
+		System.out.println("Arreglo de nombres");
+		for (int j=0; j<=nombres.length-1;j++){
+		      System.out.print (nombres[i] + " ");
+		}
+		
+		System.out.println("Arreglo de objetos");
+		for (int k=0; k<=circulo.length-1;k++){
+		      System.out.print (circulo[i] + " ");
+	    }
+	}
+
+
+
+
+	public static void buscarValorEnArreglo() {
+		for (int i=0; i<=arreglo.length-1;i++){
+		      System.out.print (arreglo[i] + " ");
+		    }
+	    int resultado = arreglo[i];
+		System.out.println("Ingresar el número de la serie que quieres consultar");
+		int i = entrada.nextInt();
+		return resultado;
+	}
+
+
+
+	public static void eliminarValorEnArreglo() {	
+		System.out.println("Ingresar la posicion de valor que quiere eliminar");
+		 int posicion = entrada.nextInt();
+		 Arreglo = remove_Element(Arreglo, posicion);
+		 
+		 Resultado = Arrays.toString(myArray)); 
+
+		return Resultado;
+
+}
