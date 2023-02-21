@@ -1,0 +1,182 @@
+package Actividad7;
+
+import java.util.Scanner;
+
+public class matrices {
+
+	public static void main (String[] Args ) {
+		
+		int [][] matrix  =  new int [2][2];
+		int [][] matrix2  =  new int [2][2];
+		
+		//values matrix
+ 	    for (int i=0;i<matrix.length;i++){
+ 	      for(int k=0;k<matrix.length;k++){
+ 	      int random = 1 + (int) (Math.random()*9);
+ 	      matrix[i][k] = random;
+ 	      }
+ 	    }
+ 	    
+ 	 //values matrix2
+ 	    for (int i=0;i<matrix2.length;i++){
+ 	      for(int k=0;k<matrix2.length;k++){
+ 	      int random = 1 + (int) (Math.random()*9);
+ 	      matrix2[i][k] = random;
+ 	      }
+ 	    } 
+ 	    
+ 	 //print
+ 	   System.out.println ("matrix 1: ");
+	     for(int i=0;i<matrix.length;i++){
+	            for(int k=0;k<matrix.length;k++)
+	            System.out.print(matrix[i][k]+" ");
+	            System.out.println(); 
+	       }
+	     System.out.println ("matrix 2: ");
+ 	     for(int i=0;i<matrix2.length;i++){
+ 	            for(int k=0;k<matrix2.length;k++)
+ 	            System.out.print(matrix2[i][k]+" ");
+ 	            System.out.println(); 
+ 	       }
+		
+		
+		try (Scanner entrada = new Scanner (System.in)) {
+		
+		System.out.println("\n¿Que operación quieres realizar? Ingresa el numero que correspoda a la lista de operaciónes"); 
+		System.out.println("\n1 - Multiplicar dos matrices");
+		System.out.println("2 - Transponer una matriz");
+		System.out.println("3 - Suma Diagonal");
+		System.out.println("4 - Encuentra el maximo");
+		System.out.println("5 - Suma de dos matrices");
+		System.out.println("6 - Multiplicar una matriz por un escalar");
+		int operacion = entrada.nextInt();
+	       while(operacion <= 0 || operacion >= 7){
+	         System.out.println("Numero invalido, ingrese nuevamente el numero de la operación");
+	         operacion = entrada.nextInt();
+	         
+	       }
+	         if(operacion == 1){
+	        	 multiplicarDosMatrices(matrix, matrix2);
+		}
+	         if(operacion == 2){
+	        	transponerMatriz(matrix);
+		}   
+	         if(operacion == 3){
+	        	 sumaDiagonal(matrix);
+	    }   
+	         if(operacion == 4){
+	        	 encontrarElMaximo(matrix);
+		} 
+	         
+	         if(operacion == 5){
+	        	 sumaDeDosMatrices(matrix,matrix2);
+	    }
+	         
+	         if(operacion == 6) {
+	        	 multiplicarMatrizPorEscalar(matrix);
+		}
+	        
+	         
+	}
+		
+}
+
+	public static char [][] multiplicarDosMatrices(int [][] matrix, int [][] matrix2 ) {
+
+		int [][] matrixresultado = new int [2][2];
+		//values matrixresultado
+		   for (int i=0;i<matrixresultado.length;i++){
+		      for(int k=0;k<matrixresultado.length;k++){
+		      matrixresultado[i][k] = matrix[i][k]*matrix2[i][k];
+		      }
+		    }
+		   System.out.println ("\nresultados: ");
+		     for(int i=0;i<matrixresultado.length;i++){
+		         for(int k=0;k<matrixresultado.length;k++)
+		         System.out.print(matrixresultado[i][k]+" ");
+		         System.out.println();
+		       }
+		   
+		return null;
+	}
+
+	public static char [][] transponerMatriz(int [][] matrix) {
+		int [][] matrixtransposicion = new int[2][2];	
+
+		
+		for(int i=0;i<matrixtransposicion.length;i++){    
+		  for(int k=0;k<matrixtransposicion.length;k++){    
+		  matrixtransposicion[i][k]=matrix[k][i];  
+		  }
+		}
+		for(int i=0;i<matrixtransposicion.length;i++){    
+			for(int k=0;k<matrixtransposicion.length;k++){    
+				System.out.print(matrixtransposicion[i][k]+" ");       
+				System.out.println();  
+				}    
+		
+		}
+		return null;
+		}
+
+	public static int sumaDiagonal(int [][] matrix) {
+		int suma = 0; 
+		for (int i = 0; i< matrix.length; ++i){
+			for (int k = 0; k < matrix[0].length; ++k){
+			suma = (matrix[0][0]+ matrix[1][1]);	
+			}
+		}
+		System.out.println ("suma: "+suma);
+		return suma;
+	}
+
+	public static int encontrarElMaximo(int [][] matrix) {
+		
+		int max = 0;
+		for (int i = 0; i< matrix.length; ++i){
+			for (int k = 0; k < matrix[0].length; ++k){
+			max = Math.max(matrix[i][k], max);	
+			}
+		}
+		System.out.println ("Maximo: "+max);
+		return max;
+	}
+
+	private static void sumaDeDosMatrices(int [][] matrix, int [][] matrix2) {
+		int [][] matrixresultado = new int [2][2];
+		
+		//values matrixresultado
+		   for (int i=0;i<matrixresultado.length;i++){
+		      for(int k=0;k<matrixresultado.length;k++){
+		      matrixresultado[i][k] = matrix[i][k] + matrix2[i][k];
+		      }
+		    }
+		   System.out.println ("\nresultados: ");
+		     for(int i=0;i<matrixresultado.length;i++){
+		         for(int k=0;k<matrixresultado.length;k++)
+		         System.out.print(matrixresultado[i][k]+" ");
+		         System.out.println();
+		       }
+		
+	}
+
+	public static char[][] multiplicarMatrizPorEscalar(int [][] matrix) {
+		int [][] matrixresultado = new int [2][2];
+		
+		System.out.println("escalar: 5");
+		
+		//values matrixresultado
+		   for (int i=0;i<matrixresultado.length;i++){
+		      for(int k=0;k<matrixresultado.length;k++){
+		      matrixresultado[i][k] = matrix[i][k]*5;
+		      }
+		    }
+		   System.out.println ("\nresultados: ");
+		     for(int i=0;i<matrixresultado.length;i++){
+		         for(int k=0;k<matrixresultado.length;k++)
+		         System.out.print(matrixresultado[i][k]+" ");
+		         System.out.println();
+		       }		
+		     return null;
+	}
+}
